@@ -35,7 +35,7 @@ public class SalesAd implements Serializable {
     @Column(name = "price")
     private Double price;
 
-    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinColumn(name = "idseller", nullable = false)
     private Seller seller;
 

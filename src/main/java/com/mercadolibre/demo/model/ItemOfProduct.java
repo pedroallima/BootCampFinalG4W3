@@ -27,11 +27,11 @@ public class ItemOfProduct implements Serializable {
     @Column(name = "quantity")
     private Long quantity;
 
-    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinColumn(name = "idsales_ad")
     private SalesAd salesAd;
 
-    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinColumn(name = "id_purchase_order")
     private PurchaseOrder purchaseOrder;
 

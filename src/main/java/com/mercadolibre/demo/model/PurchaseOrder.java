@@ -32,7 +32,7 @@ public class PurchaseOrder implements Serializable {
     @Column(name = "order_status")
     OrderStatus orderStatus = OrderStatus.CARRINHO;
 
-    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @ManyToOne( fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinColumn(name = "id_buyer")
     private Buyer idBuyer;
 

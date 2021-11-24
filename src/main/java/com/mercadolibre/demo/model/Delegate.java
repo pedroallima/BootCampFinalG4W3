@@ -28,7 +28,7 @@ public class Delegate implements Serializable {
     @Column(name = "lastname", nullable = false)
     private String lastname;
 
-    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinColumn(name = "section_code", nullable = false)
     private Section idSection;
 
