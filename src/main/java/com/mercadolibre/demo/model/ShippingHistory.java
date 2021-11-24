@@ -17,7 +17,7 @@ import java.time.LocalDate;
 @Entity
 @Table(name = "shipping_history")
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
-public class Shipping_history implements Serializable {
+public class ShippingHistory implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id

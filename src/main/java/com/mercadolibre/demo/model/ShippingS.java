@@ -27,15 +27,15 @@ public class ShippingS implements Serializable {
 	@Column(name = "name", nullable = false)
 	private String name;
 
-	@Column(name = "order", nullable = false)
-	private long order;
+	@Column(name = "ordem", nullable = false)
+	private long ordem;
 
-	@Column(name = "status", nullable = false)
-	private String status;
+	@Column(name = "ativo", nullable = false)
+	private String ativo;
 
-	public ShippingS(String name, long order, String status) {
+	public ShippingS(String name, long ordem, String ativo) {
 		this.name = name;
-		this.order = order;
-		this.status = status;
+		this.ordem = ordem;
+		this.ativo = ativo;
 	}
 }

@@ -4,7 +4,6 @@ import com.mercadolibre.demo.config.SecurityController;
 import com.mercadolibre.demo.dto.AdressSaveDTO;
 import com.mercadolibre.demo.dto.response.AdressBuscaDTO;
 import com.mercadolibre.demo.dto.response.AdressRestDTO;
-import com.mercadolibre.demo.service.AdressService;
 import com.mercadolibre.demo.service.ShippingService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -14,8 +13,8 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 
 @RestController
-@RequestMapping("/api/v1/fresh-products/shipping/code")
-public class ShippingController implements SecurityController {
+@RequestMapping("/api/v1/fresh-products/shipping")
+public class ShippingHistoryController implements SecurityController {
 
 	@Autowired
 	private ShippingService shippingService;

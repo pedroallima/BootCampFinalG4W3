@@ -16,6 +16,7 @@ import java.util.List;
 @RequestMapping("/api/v1/fresh-products/shipping/status")
 public class ShippingStatusController implements SecurityController {
 
+
 	@Autowired
 	private ShippingSService shippingSService;
 

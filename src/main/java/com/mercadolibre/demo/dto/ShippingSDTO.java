@@ -7,12 +7,12 @@ import javax.validation.constraints.NotBlank;
 @Getter
 @Setter
 public class ShippingSDTO {
-		@NotBlank(message = "{name.not.blank}")
+		//@NotBlank(message = "{name.not.blank}")
         private String name;
 
-        @NotBlank(message = "{name.not.blank}")
-        private long order;
+       // @NotBlank(message = "{order.not.null}")
+        private Long order;
 
-        @NotBlank(message = "{name.not.blank}")
+        //@NotBlank(message = "{status.not.blank}")
         private String status;
 }
