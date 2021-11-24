@@ -1,6 +1,8 @@
 package com.mercadolibre.demo.service;
 
 import com.mercadolibre.demo.dto.ShippingSDTO;
+import com.mercadolibre.demo.model.Shipping;
+import com.mercadolibre.demo.model.ShippingHistory;
 import com.mercadolibre.demo.model.ShippingS;
 import com.mercadolibre.demo.repository.ShippingHistoryRepository;
 import com.mercadolibre.demo.repository.ShippingSRepository;
@@ -18,6 +20,14 @@ public class ShippingHistoryService {
 	@Autowired
 	public ShippingHistoryService(ShippingHistoryRepository shippingHistoryRepository) {
 		this.shippingHistoryRepository = shippingHistoryRepository;
+	}
+
+	public ShippingHistory add(String code) {
+		return null;
+	}
+
+	public Shipping save(Shipping dto) {
+		return null;
 	}
 
 

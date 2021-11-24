@@ -21,13 +21,19 @@ public class Shipping implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id_shipping")
-	private Long idsStatus;
+	private Long idsShipping;
 
 	@Column(name = "code_track")
-	private Long code_track;
+	private String code_track;
 
-	@ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+/*	@ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	@JoinColumn(name = "id_purchase_order", nullable = false)
-	private PurchaseOrder id_purchase_order;
+	private PurchaseOrder id_purchase_order;*/
+
+	@Column(name = "id_purchase_order")
+	private Long id_purchase_order;
+
+	@Column(name = "id_product")
+	private Long id_product;
 
 }

@@ -82,16 +82,16 @@ public class AdressService {
 	public AdressRestDTO convertAddressRestDTO(Adress adress) throws Exception {
 			if(adress.getIdBuyer() != null){
 				AdressRestDTO adressRestDTO = new AdressRestDTO();
-				adressRestDTO.setCep(adressRestDTO.getCep());
-				adressRestDTO.setLogradouro(adressRestDTO.getLogradouro());
-				adressRestDTO.setComplemento(adressRestDTO.getComplemento());
-				adressRestDTO.setBairro(adressRestDTO.getBairro());
-				adressRestDTO.setLocalidade(adressRestDTO.getLocalidade());
-				adressRestDTO.setUf(adressRestDTO.getUf());
-				adressRestDTO.setFone1(adressRestDTO.getFone1());
-				adressRestDTO.setFone2(adressRestDTO.getFone2());
-				adressRestDTO.setIdbuyer(adressRestDTO.getIdbuyer());
-				adressRestDTO.setReferencia(adressRestDTO.getReferencia());
+				adressRestDTO.setCep(adress.getCep());
+				adressRestDTO.setLogradouro(adress.getLogradouro());
+				adressRestDTO.setComplemento(adress.getComplemento());
+				adressRestDTO.setBairro(adress.getBairro());
+				adressRestDTO.setLocalidade(adress.getLocalidade());
+				adressRestDTO.setUf(adress.getUf());
+				adressRestDTO.setFone1(adress.getFone1());
+				adressRestDTO.setFone2(adress.getFone2());
+				adressRestDTO.setIdbuyer(adress.getIdBuyer().getName()+" "+adress.getIdBuyer().getLastName());
+				adressRestDTO.setReferencia(adress.getReferencia());
 				return adressRestDTO;
 			}else{
 				throw new Exception("Id do Buyer não cadastrado");

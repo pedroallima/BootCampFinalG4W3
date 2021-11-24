@@ -25,11 +25,11 @@ public class ShippingHistory implements Serializable {
 	@Column(name = "id_history_shipping")
 	private Long id_history_shipping;
 
-	@ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	@ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	@JoinColumn(name = "id_shipping_status", nullable = false)
 	private ShippingS shippingS;
 
-	@ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	@ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	@JoinColumn(name = "id_shipping", nullable = false)
 	private Shipping id_shipping;
 

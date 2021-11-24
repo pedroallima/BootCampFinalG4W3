@@ -1,10 +1,8 @@
 package com.mercadolibre.demo.controller;
 
 import com.mercadolibre.demo.config.SecurityController;
-import com.mercadolibre.demo.dto.AdressSaveDTO;
-import com.mercadolibre.demo.dto.response.AdressBuscaDTO;
-import com.mercadolibre.demo.dto.response.AdressRestDTO;
-import com.mercadolibre.demo.service.AdressService;
+import com.mercadolibre.demo.dto.response.ShippingDTO;
+import com.mercadolibre.demo.model.Shipping;
 import com.mercadolibre.demo.service.ShippingService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -14,7 +12,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 
 @RestController
-@RequestMapping("/api/v1/fresh-products/shipping/code")
+@RequestMapping("/api/v1/fresh-products/shippingcode")
 public class ShippingController implements SecurityController {
 
 	@Autowired
@@ -22,24 +20,25 @@ public class ShippingController implements SecurityController {
 
 
 	@GetMapping(value = "/tracking/{code}")
-	public ResponseEntity<AdressBuscaDTO> litShipping(@Valid @PathVariable String code) throws Exception {
+	public ResponseEntity<Shipping> litShipping(@Valid @PathVariable String code) throws Exception {
 		try {
-			AdressBuscaDTO adress = shippingService.buscar(code);
-			return new ResponseEntity<>(adress, HttpStatus.CREATED);
+			Shipping shipping = shippingService.buscar(code);
+			return new ResponseEntity<>(shipping, HttpStatus.CREATED);
 		}
 		catch(Exception e) {
 			return new ResponseEntity(e.getMessage(), HttpStatus.NOT_FOUND);
 		}
 	}
-	@PostMapping(value = "/save")
-	public ResponseEntity<AdressRestDTO> saveShipping(@RequestBody AdressSaveDTO dto) throws Exception {
-		try {
-			AdressRestDTO adressRestDTO = shippingService.save(dto);
-			return new ResponseEntity<>(adressRestDTO, HttpStatus.CREATED);
+
+	@GetMapping(value = "/save/{purchase_order}/{general}")
+	@ResponseBody
+	public ResponseEntity<ShippingDTO> saveShipping(@PathVariable Long purchase_order, @PathVariable boolean general) {
+	try {
+			ShippingDTO shippingDTO = shippingService.save(purchase_order,general);
+			return new ResponseEntity<>(shippingDTO, HttpStatus.CREATED);
 		} catch (Exception e) {
 			return new ResponseEntity(e.getMessage(), HttpStatus.NOT_FOUND);
 		}
-
 	}
 
 }
