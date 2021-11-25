@@ -199,23 +199,18 @@ http://localhost:8080/api/v1/fresh-products/shippingcode/save
 ---
 ---
 
-
-
-### // Projeto em grupo
-
-A clínica veterinária “Zoo World” quer implementar um sistema desenvolvido em Java para a administração de cada um de
-seus pacientes. Os veterinários têm dois tipos de especialidades: Animais Domésticos e Animais de Fazenda, com base no
-fato de que atendem cães, gatos, porquinhos-da-índia, coelhos, tartarugas, cavalos, vacas e ovelhas.
-
-<br/><br/>
-
 ## Nível 1: Base
+
 - [x] 1. Readme.txt descritivo.
 - [x] 2. Documentação em PDF com formato de User Story fornecido pela cadeira
 (Template)
 - [x] 3. User Story com até 4 endpoints.
 - [x] 4. Coleção de casos de teste do Postman para cada endpoint.
 - [x] 5. Cobertura de teste entre 50% e 80%.
+
+
+----
+
 
 ## Nível 2: Bônus
 
