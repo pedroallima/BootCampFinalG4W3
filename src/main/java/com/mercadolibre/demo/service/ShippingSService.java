@@ -20,9 +20,13 @@ public class ShippingSService {
 	}
 
 
-	public ShippingS save(ShippingSDTO dto) {
+	public ShippingS salvar(ShippingSDTO dto) throws Exception {
 		ShippingS shippingS = convertShippingStatusDTO(dto);
-		return shippingSRepository.save(shippingS);
+		if(shippingS.getIdsStatus() != null){
+			return shippingSRepository.save(shippingS);
+		}else{
+			throw new Exception("Id não cadastrado");
+		}
 	}
 
 
@@ -55,7 +59,11 @@ public class ShippingSService {
 	}
 
 	public ShippingS convertShippingStatusDTO(ShippingSDTO dto) {
-		return new ShippingS(dto.getName(),dto.getOrder(),dto.getStatus());
+		ShippingS shippingS = new ShippingS();
+		shippingS.setName(dto.getName());
+		shippingS.setOrdem(dto.getOrder());
+		shippingS.setAtivo(dto.getStatus());
+		return  shippingS;
 	}
 
 }

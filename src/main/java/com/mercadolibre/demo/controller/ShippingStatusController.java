@@ -21,8 +21,8 @@ public class ShippingStatusController implements SecurityController {
 	private ShippingSService shippingSService;
 
 	@PostMapping(value = "/save")
-	public ResponseEntity<ShippingS> saveStatus(@Valid @RequestBody ShippingSDTO dto) {
-		ShippingS shippingS = shippingSService.save(dto);
+	public ResponseEntity<ShippingS> saveStatus(@Valid @RequestBody ShippingSDTO dto) throws Exception {
+		ShippingS shippingS = shippingSService.salvar(dto);
 		return new ResponseEntity<>(shippingS, HttpStatus.CREATED);
 	}
 
