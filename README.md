@@ -209,15 +209,6 @@ fato de que atendem cães, gatos, porquinhos-da-índia, coelhos, tartarugas, cav
 
 <br/><br/>
 
-● De cada um de seus pacientes, eles precisam obter os seguintes dados:<br/>
-
-- [x] espécie,<br/>
-- [x] raça,<br/>
-- [x] cor/s,<br/>
-- [x] data de nascimento e<br/>
-- [x] nome.<br/>
-
-
 ## Nível 1: Base
 - [x] 1. Readme.txt descritivo.
 - [x] 2. Documentação em PDF com formato de User Story fornecido pela cadeira
