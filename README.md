@@ -87,7 +87,9 @@ Como melhoria para este requisito, foi possivel criar um sistema de Shipping ond
 
 Obs: Neste projeto e possivel utilizar o Postman ou o Swegger para poder testar os recursos de Back-end.
 
+[GitHub Logo](database/diagram/Requisito-6.png)
 
+![image](https://user-images.githubusercontent.com/89105147/143494979-6a384906-63ae-4d61-80f8-8e5db81ddade.png)
 
 
 
