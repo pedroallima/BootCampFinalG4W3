@@ -1,6 +1,10 @@
 package com.mercadolibre.demo.controller;
 
 import com.mercadolibre.demo.config.SecurityController;
+import com.mercadolibre.demo.dto.InboundOrderDTO;
+import com.mercadolibre.demo.dto.ShippingHistoryDTO;
+import com.mercadolibre.demo.dto.response.ShippingDTO;
+import com.mercadolibre.demo.model.InboundOrder;
 import com.mercadolibre.demo.model.Shipping;
 import com.mercadolibre.demo.model.ShippingHistory;
 import com.mercadolibre.demo.service.ShippingHistoryService;
@@ -19,25 +23,19 @@ public class ShippingHistoryController implements SecurityController {
 	private ShippingHistoryService shippingHistoryService;
 
 
-	@GetMapping(value = "/tracking/{code}")
-	public ResponseEntity<ShippingHistory> litShipping(@Valid @PathVariable String code) throws Exception {
+/*	@PostMapping(value = "/save/{id_status}/{id_shipping}")
+	public ResponseEntity<ShippingHistory> litShipping(@Valid @PathVariable Long id_status, @PathVariable Long id_status) throws Exception {
 		try {
-			ShippingHistory shippingHistory = shippingHistoryService.add(code);
+			ShippingHistory shippingHistory = shippingHistoryService.save1(id_status,id_status);
 			return new ResponseEntity<>(shippingHistory, HttpStatus.CREATED);
-		}
-		catch(Exception e) {
-			return new ResponseEntity(e.getMessage(), HttpStatus.NOT_FOUND);
-		}
-	}
-	@PostMapping(value = "/save")
-	public ResponseEntity<Shipping> saveShipping(@RequestBody Shipping dto) throws Exception {
-		try {
-			Shipping shipping = shippingHistoryService.save(dto);
-			return new ResponseEntity<>(shipping, HttpStatus.CREATED);
 		} catch (Exception e) {
 			return new ResponseEntity(e.getMessage(), HttpStatus.NOT_FOUND);
 		}
+	}*/
 
+	@PostMapping(value ="/save")
+	public ResponseEntity<ShippingHistory> saveInboundOrder(@Valid @RequestBody ShippingHistoryDTO dto) throws Exception {
+		ShippingHistory shippingHistory = shippingHistoryService.save(dto);
+		return new ResponseEntity<>(shippingHistory, HttpStatus.CREATED);
 	}
-
 }

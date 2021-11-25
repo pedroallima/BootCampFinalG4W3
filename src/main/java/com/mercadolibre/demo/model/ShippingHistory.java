@@ -9,6 +9,7 @@ import lombok.Setter;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.Optional;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -31,9 +32,12 @@ public class ShippingHistory implements Serializable {
 
 	@ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	@JoinColumn(name = "id_shipping", nullable = false)
-	private Shipping id_shipping;
+	private Shipping shipping;
 
 	private LocalDate date = LocalDate.now();
 
-
+	public ShippingHistory(Optional<ShippingS> shippingS, Optional<Shipping> shipping) {
+		this.shippingS = shippingS.get();
+		this.shipping = shipping.get();
+	}
 }

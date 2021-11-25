@@ -1,6 +1,7 @@
 package com.mercadolibre.demo.controller;
 
 import com.mercadolibre.demo.config.SecurityController;
+import com.mercadolibre.demo.dto.TrakingDTO;
 import com.mercadolibre.demo.dto.response.ShippingDTO;
 import com.mercadolibre.demo.model.Shipping;
 import com.mercadolibre.demo.service.ShippingService;
@@ -19,11 +20,11 @@ public class ShippingController implements SecurityController {
 	private ShippingService shippingService;
 
 
-	@GetMapping(value = "/tracking/{code}")
-	public ResponseEntity<Shipping> litShipping(@Valid @PathVariable String code) throws Exception {
+	@GetMapping(value = "/list/{code}")
+	public ResponseEntity<TrakingDTO> litShipping(@Valid @PathVariable String code) throws Exception {
 		try {
-			Shipping shipping = shippingService.buscar(code);
-			return new ResponseEntity<>(shipping, HttpStatus.CREATED);
+			TrakingDTO trakingDTO = shippingService.buscar(code);
+			return new ResponseEntity<>(trakingDTO, HttpStatus.CREATED);
 		}
 		catch(Exception e) {
 			return new ResponseEntity(e.getMessage(), HttpStatus.NOT_FOUND);

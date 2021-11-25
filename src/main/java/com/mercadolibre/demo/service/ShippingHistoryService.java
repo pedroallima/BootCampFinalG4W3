@@ -1,10 +1,12 @@
 package com.mercadolibre.demo.service;
 
+import com.mercadolibre.demo.dto.InboundOrderDTO;
+import com.mercadolibre.demo.dto.ShippingHistoryDTO;
 import com.mercadolibre.demo.dto.ShippingSDTO;
-import com.mercadolibre.demo.model.Shipping;
-import com.mercadolibre.demo.model.ShippingHistory;
-import com.mercadolibre.demo.model.ShippingS;
+import com.mercadolibre.demo.dto.response.ShippingDTO;
+import com.mercadolibre.demo.model.*;
 import com.mercadolibre.demo.repository.ShippingHistoryRepository;
+import com.mercadolibre.demo.repository.ShippingRepository;
 import com.mercadolibre.demo.repository.ShippingSRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,58 +18,42 @@ import java.util.Optional;
 public class ShippingHistoryService {
 
 	private ShippingHistoryRepository shippingHistoryRepository;
+	private ShippingSRepository shippingSRepository;
+	private ShippingRepository shippingRepository;
 
 	@Autowired
-	public ShippingHistoryService(ShippingHistoryRepository shippingHistoryRepository) {
+	public ShippingHistoryService(ShippingHistoryRepository shippingHistoryRepository, ShippingSRepository shippingSRepository, ShippingRepository shippingRepository) {
 		this.shippingHistoryRepository = shippingHistoryRepository;
+		this.shippingSRepository = shippingSRepository;
+		this.shippingRepository = shippingRepository;
 	}
 
-	public ShippingHistory add(String code) {
-		return null;
+	public ShippingHistory save(ShippingHistoryDTO dto) throws Exception {
+		ShippingHistory shippingHistory = convertShippingHistoryToDTO(dto);
+		return shippingHistoryRepository.save(shippingHistory);
 	}
-
-	public Shipping save(Shipping dto) {
-		return null;
-	}
-
-
-/*	public ShippingS save(ShippingSDTO dto) {
-		ShippingS shippingS = convertShippingStatusDTO(dto);
-		return shippingHistoryRepository.save(shippingS);
-	}
-
-
-	public List<ShippingS> list() {
-		return shippingHistoryRepository.findAll();
-	}
-
-	public Optional<ShippingS> findById(Long id) {
-		return shippingHistoryRepository.findById(id);
-	}
-
-	public ShippingS update(ShippingSDTO dto, Long id) throws Exception {
-		Optional<ShippingS> existSaller = findById(id);
-		if (existSaller.isPresent()) {
-			ShippingS shippingS = convertShippingStatusDTO(dto);
-			shippingS.setIdsStatus(id);
-			return shippingHistoryRepository.saveAndFlush(shippingS);
+	public Optional<ShippingS> obtemHStatus(ShippingHistoryDTO dto) throws Exception {
+		Optional<ShippingS> shippingS = shippingSRepository.findById(dto.getId_status());
+		if (shippingS.isPresent()) {
+			return shippingS;
 		} else {
-			throw new Exception("Id não cadastrado");
+			throw new Exception("Shipping Status não encontrado");
 		}
 	}
 
-	public void delete(Long id) throws Exception {
-		Optional<ShippingS> shippingStatus = findById(id);
-		if (shippingStatus.isPresent()) {
-			shippingHistoryRepository.deleteById(id);
+	public Optional<Shipping> obtemShipping(ShippingHistoryDTO dto) throws Exception {
+		Optional<Shipping> shipping = shippingRepository.findById(dto.getId_shipping());
+		if (shipping.isPresent()) {
+			return shipping;
 		} else {
-			throw new Exception("Id não cadastrado");
+			throw new Exception("Shipping não encontrada");
 		}
 	}
 
-	public ShippingS convertShippingStatusDTO(ShippingSDTO dto) {
-		return new ShippingS(dto.getName(),dto.getOrder(),dto.getStatus());
-	}*/
+	public ShippingHistory convertShippingHistoryToDTO(ShippingHistoryDTO dto) throws Exception {
+		return new ShippingHistory(obtemHStatus(dto), obtemShipping(dto));
+	}
+
 
 }
 
