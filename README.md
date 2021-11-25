@@ -161,10 +161,7 @@ Neste local e possivel Criar um codigo de rastreamento para que o comprado possa
 
 
 ```
-{
-        "id_status":7,
-        "id_shipping":1
-}
+http://localhost:8080/api/v1/fresh-products/shippingcode/save/{CODE_PURCHASEORDER}/{BOLEAN}
 ```
 
 
