@@ -22,7 +22,7 @@ public class ShippingSService {
 
 	public ShippingS salvar(ShippingSDTO dto) throws Exception {
 		ShippingS shippingS = convertShippingStatusDTO(dto);
-		if(shippingS.getIdsStatus() != null){
+		if(shippingS.getName() != null){
 			return shippingSRepository.save(shippingS);
 		}else{
 			throw new Exception("Id não cadastrado");

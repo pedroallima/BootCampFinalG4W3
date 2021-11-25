@@ -100,7 +100,7 @@ public class AdressService {
 
 
 	public AdressBuscaDTO convertAddressBuscaRestDTO(AdressDTO adressDTO) throws Exception {
-		if(adressDTO.getIdbuyer() != null){
+		if(adressDTO.getCep() != null){
 		AdressBuscaDTO adressRestDTO = new AdressBuscaDTO();
 		adressRestDTO.setCep(adressDTO.getCep());
 		adressRestDTO.setLogradouro(adressDTO.getLogradouro());

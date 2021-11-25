@@ -158,14 +158,14 @@ public class AdressServiceTest {
     }
 
     @Test
-    void testAdressBuscaDTONoSuccess() {
+    void testAdressBuscaDTONoSuccess() throws Exception {
+        Buyer buyer = baseBuyer();
         AdressDTO adressDTO = baseAdressDTO();
         adressDTO.setIdbuyer(null);
-        Throwable exceptionThatWasThrown = assertThrows(Exception.class, () -> {
-            adressService.convertAddressBuscaRestDTO(adressDTO);
-        });
+        Mockito.when(mockBuyer.findById(Mockito.any(Long.class))).thenReturn(Optional.of(buyer));
+        AdressBuscaDTO adressBuscaDTO = adressService.convertAddressBuscaRestDTO(adressDTO);
 
-        assertTrue(exceptionThatWasThrown.getMessage(), true);
+        assertEquals("56310-753", adressBuscaDTO.getCep());
     }
 
     @Test
@@ -174,7 +174,10 @@ public class AdressServiceTest {
         Buyer buyer = baseBuyer();
 
         Mockito.when(mockBuyer.findById(Mockito.any(Long.class))).thenReturn(Optional.of(buyer));
-        adressService.convertAddressBuscaRestDTO(adressDTO);
+        AdressBuscaDTO adressBuscaDTO = adressService.convertAddressBuscaRestDTO(adressDTO);
+
+        assertEquals("56310-753", adressBuscaDTO.getCep());
+
     }
 
     }

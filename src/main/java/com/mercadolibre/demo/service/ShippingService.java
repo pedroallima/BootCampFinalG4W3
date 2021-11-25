@@ -7,7 +7,6 @@ import com.mercadolibre.demo.dto.response.ShippingListDTO;
 import com.mercadolibre.demo.dto.response.ShippingNativeDTO;
 import com.mercadolibre.demo.model.PurchaseOrder;
 import com.mercadolibre.demo.model.Shipping;
-import com.mercadolibre.demo.model.ShippingHistory;
 import com.mercadolibre.demo.repository.PurchaseOrderRepository;
 import com.mercadolibre.demo.repository.ShippingHistoryRepository;
 import com.mercadolibre.demo.repository.ShippingRepository;
@@ -34,9 +33,6 @@ public class ShippingService {
 	}
 
 
-
-
-
     public TrakingDTO buscar(String code) {
 		TrakingDTO trakingDTO = new TrakingDTO();
 		trakingDTO.setCode_traking(code);
@@ -45,13 +41,12 @@ public class ShippingService {
 		return trakingDTO;
     }
 
-	public ShippingDTO save(Long purchase_order, Boolean general) {
+	public ShippingDTO salvar(Long purchase_order, Boolean general) {
 
 		Shipping shipping = new Shipping();
 		ShippingDTO shippingDTO = new ShippingDTO();
-		Optional<PurchaseOrder> purchaseOrder = this.findById(purchase_order);
+		Optional<PurchaseOrder> purchaseOrder = this.buscarPurchase(purchase_order);
 		shippingDTO.setBuyer_name(purchaseOrder.get().getIdBuyer().getName()+" "+purchaseOrder.get().getIdBuyer().getLastName());
-
 		if(general == true){
 			List<ShippingListDTO> shippingListDTOList = this.trakingPack(purchaseOrder.get());
 			shippingDTO.setShippingListDTOList(shippingListDTOList);
@@ -63,7 +58,6 @@ public class ShippingService {
 		}else{
 			List<ShippingListDTO> shippingListDTOList = this.trakingProducts(purchaseOrder.get());
 			shippingDTO.setShippingListDTOList(shippingListDTOList);
-
 			for (ShippingListDTO item: shippingListDTOList) {
 				shipping.setId_product(item.getId_product());
 				shipping.setCode_track(item.getCode_traking());
@@ -85,9 +79,7 @@ public class ShippingService {
 		shippingListDTO.setId_product(0L);
 		shippingListDTO.setIdPpurchase_order(purchase_order.getId());
 		shippingListDTOList.add(shippingListDTO);
-
 		return shippingListDTOList;
-
 	}
 
 	public List<ShippingListDTO> trakingProducts(PurchaseOrder purchase_order) {
@@ -120,13 +112,11 @@ public class ShippingService {
 		return "ML"+sequenceInit+"BR";
 	}
 
-	private Optional<PurchaseOrder> findById(Long purchase_order) {
+	private Optional<PurchaseOrder> buscarPurchase(Long purchase_order) {
 		Optional<PurchaseOrder> purchaseOrder = purchaseOrderRepository.findById(purchase_order);
 		return purchaseOrder;
 	}
 
-	private void save(Shipping shipping) {
-	}
 
 
 }

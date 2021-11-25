@@ -3,7 +3,6 @@ package com.mercadolibre.demo.controller;
 import com.mercadolibre.demo.config.SecurityController;
 import com.mercadolibre.demo.dto.TrakingDTO;
 import com.mercadolibre.demo.dto.response.ShippingDTO;
-import com.mercadolibre.demo.model.Shipping;
 import com.mercadolibre.demo.service.ShippingService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -22,24 +21,16 @@ public class ShippingController implements SecurityController {
 
 	@GetMapping(value = "/list/{code}")
 	public ResponseEntity<TrakingDTO> litShipping(@Valid @PathVariable String code) throws Exception {
-		try {
 			TrakingDTO trakingDTO = shippingService.buscar(code);
-			return new ResponseEntity<>(trakingDTO, HttpStatus.CREATED);
-		}
-		catch(Exception e) {
-			return new ResponseEntity(e.getMessage(), HttpStatus.NOT_FOUND);
-		}
+			return new ResponseEntity<>(trakingDTO, HttpStatus.OK);
 	}
+
 
 	@GetMapping(value = "/save/{purchase_order}/{general}")
 	@ResponseBody
 	public ResponseEntity<ShippingDTO> saveShipping(@PathVariable Long purchase_order, @PathVariable boolean general) {
-	try {
-			ShippingDTO shippingDTO = shippingService.save(purchase_order,general);
-			return new ResponseEntity<>(shippingDTO, HttpStatus.CREATED);
-		} catch (Exception e) {
-			return new ResponseEntity(e.getMessage(), HttpStatus.NOT_FOUND);
-		}
-	}
+			ShippingDTO shippingDTO = shippingService.salvar(purchase_order,general);
+			return new ResponseEntity<>(shippingDTO, HttpStatus.OK);
 
+	}
 }

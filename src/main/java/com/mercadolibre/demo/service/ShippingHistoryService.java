@@ -28,7 +28,7 @@ public class ShippingHistoryService {
 		this.shippingRepository = shippingRepository;
 	}
 
-	public ShippingHistory save(ShippingHistoryDTO dto) throws Exception {
+	public ShippingHistory salvar(ShippingHistoryDTO dto) throws Exception {
 		ShippingHistory shippingHistory = convertShippingHistoryToDTO(dto);
 		return shippingHistoryRepository.save(shippingHistory);
 	}
