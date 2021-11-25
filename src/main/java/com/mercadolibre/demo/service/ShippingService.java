@@ -1,11 +1,15 @@
 package com.mercadolibre.demo.service;
 
+import com.mercadolibre.demo.dto.TrakingDTO;
+import com.mercadolibre.demo.dto.TrakingListDTO;
 import com.mercadolibre.demo.dto.response.ShippingDTO;
 import com.mercadolibre.demo.dto.response.ShippingListDTO;
 import com.mercadolibre.demo.dto.response.ShippingNativeDTO;
 import com.mercadolibre.demo.model.PurchaseOrder;
 import com.mercadolibre.demo.model.Shipping;
+import com.mercadolibre.demo.model.ShippingHistory;
 import com.mercadolibre.demo.repository.PurchaseOrderRepository;
+import com.mercadolibre.demo.repository.ShippingHistoryRepository;
 import com.mercadolibre.demo.repository.ShippingRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,16 +24,25 @@ public class ShippingService {
 
 	private ShippingRepository shippingRepository;
 	private PurchaseOrderRepository purchaseOrderRepository;
+	private ShippingHistoryRepository shippingHistoryRepository;
 
 	@Autowired
-	public ShippingService(ShippingRepository shippingRepository, PurchaseOrderRepository purchaseOrderRepository) {
+	public ShippingService(ShippingRepository shippingRepository, PurchaseOrderRepository purchaseOrderRepository, ShippingHistoryRepository shippingHistoryRepository) {
 		this.shippingRepository = shippingRepository;
 		this.purchaseOrderRepository = purchaseOrderRepository;
+		this.shippingHistoryRepository = shippingHistoryRepository;
 	}
 
 
-    public Shipping buscar(String code) {
-		return null;
+
+
+
+    public TrakingDTO buscar(String code) {
+		TrakingDTO trakingDTO = new TrakingDTO();
+		trakingDTO.setCode_traking(code);
+		List<TrakingListDTO> trakingListDTOS = shippingRepository.listHistory(code);
+		trakingDTO.setShippingListDTOList(trakingListDTOS);
+		return trakingDTO;
     }
 
 	public ShippingDTO save(Long purchase_order, Boolean general) {
