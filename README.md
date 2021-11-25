@@ -212,6 +212,94 @@ http://localhost:8080/api/v1/fresh-products/shippingcode/save
 ----
 
 
+#### GET -ml-ShippingStatus-01
+
+cadastre status para o rastreio.
+
+```
+{
+    "name":"Parabens, seu pedido chegou!!!",
+    "order":9,
+    "status":"ATIVO"
+}
+```
+***Link para Swegger:***
+
+http://localhost:8080/swagger-ui/index.html?configUrl=/v3/api-docs/swagger-config#/adress-controller/saveAddress_1
+
+
+***Link para POstman:***
+
+http://localhost:8080/api/v1/fresh-products/shipping/status/save
+
+---
+
+#### GET -ml-ShippingStatus-02
+
+ista todos os status cadastrados.
+
+```
+/api/v1/fresh-products/shipping/status/list
+```
+
+***Link para Swegger:***
+
+http://localhost:8080/swagger-ui/index.html?configUrl=/v3/api-docs/swagger-config#/shipping-status-controller/listStatus
+
+***Link para POstman:***
+
+http://localhost:8080/api/v1/fresh-products/shipping/status/list
+
+---
+---
+
+
+#### GET -ml-ShippingStatus-03
+
+Editar o status, caso necessário.
+
+```
+{
+    "name":"Parabens, seu pedido chegou!!!",
+    "order":9,
+    "status":"INATIVO"
+}
+```
+
+***Link para Swegger:***
+
+http://localhost:8080/swagger-ui/index.html?configUrl=/v3/api-docs/swagger-config#/shipping-status-controller/updateStatus
+
+***Link para POstman:***
+
+http://localhost:8080/api/v1/fresh-products/shipping/status/update/7
+
+---
+---
+---
+
+#### GET -ml-ShippingStatus-03
+
+Editar o status, caso necessário.
+
+```
+/api/v1/fresh-products/shipping/status/delete/8
+
+```
+
+***Link para Swegger:***
+
+http://localhost:8080/swagger-ui/index.html?configUrl=/v3/api-docs/swagger-config#/shipping-status-controller/deleteStatus
+
+***Link para POstman:***
+
+http://localhost:8080/api/v1/fresh-products/shipping/status/delete/8
+
+---
+---
+---
+---
+
 ## Nível 2: Bônus
 
 - [x] 1. Todos os resultados do Nível 1 concluídos.
