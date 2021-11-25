@@ -300,7 +300,7 @@ http://localhost:8080/api/v1/fresh-products/shipping/status/delete/8
 ## Nível 2: Bônus
 
 - [x] 1. Todos os resultados do Nível 1 concluídos.
-- [x] 2. Diagrama de classes completo (UML) do projeto final.
+- [ ] 2. Diagrama de classes completo (UML) do projeto final. - [x] parceal
 - [x] 3. Diagrama de Entidade-Relacionamento (DER) completo do Projeto Final.
 - [x] 4. User Story com mais de 4 endpoints (requisito 6).
 - [x] 5. Cobertura de teste superior a 80% (cobertura de teste> 80%)
