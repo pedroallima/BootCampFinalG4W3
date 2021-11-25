@@ -49,13 +49,13 @@ public class AdressService {
 
 	public AdressRestDTO save(AdressSaveDTO dto) throws Exception {
 		if(dto.getIdBuyer() != null){
-		AdressDTO addressDTO = this.buscarCep(dto.getCep());
-		addressDTO.setIdbuyer(dto.getIdBuyer());
-		addressDTO.setReferencia(dto.getReferencia());
-		addressDTO.setFone1(dto.getFone1());
-		addressDTO.setFone2(dto.getFone2());
-		Adress address = convertAddressDTO(addressDTO);
-		addressRepository.save(address);
+			AdressDTO addressDTO = this.buscarCep(dto.getCep());
+			addressDTO.setIdbuyer(dto.getIdBuyer());
+			addressDTO.setReferencia(dto.getReferencia());
+			addressDTO.setFone1(dto.getFone1());
+			addressDTO.setFone2(dto.getFone2());
+			Adress address = convertAddressDTO(addressDTO);
+			addressRepository.save(address);
 		return convertAddressRestDTO(address);
 		}else{
 			throw new Exception("Id do Buyer não cadastrado");
