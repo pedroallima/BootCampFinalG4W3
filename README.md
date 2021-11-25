@@ -93,7 +93,7 @@ Obs: Neste projeto e possivel utilizar o Postman ou o Swegger para poder testar 
 
 
 
-
+http://localhost:8080/api/v1/fresh-products/shippingcode/list/{CODIGO_RASTREIO}
 
 
 
