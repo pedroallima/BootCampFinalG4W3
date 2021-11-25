@@ -23,7 +23,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @AutoConfigureTestEntityManager
 @SpringBootTest
 @AutoConfigureMockMvc
-public class AdressControllerTest {
+public class ShippingHistoryControllerTest {
 
 	private URI uri;
 
@@ -46,64 +46,11 @@ public class AdressControllerTest {
     @Test
     public void testListCepNoSucess() throws Exception {
 
-        uri = new URI("/api/v1/fresh-products/adress/buscar/null");
+        uri = new URI("/api/v1/fresh-products/shippingHistory/save");
 
         assertNotNull(uri);
 
-        MvcResult result = mockMvc.perform(
-                        MockMvcRequestBuilders.get(uri).header("Authorization", tokenDTO.getTipo() + " " + tokenDTO.getToken()))
-                .andExpect(status().isNotFound()).andReturn();
-
-        String responseJson = result.getResponse().getContentAsString();
-
-        assertNotNull(responseJson);
-    }
-
-    @Test
-    public void testListCepWithSucess() throws Exception {
-
-        uri = new URI("/api/v1/fresh-products/adress/buscar/56310753");
-
-        assertNotNull(uri);
-
-        MvcResult result = mockMvc.perform(
-                        MockMvcRequestBuilders.get(uri).header("Authorization", tokenDTO.getTipo() + " " + tokenDTO.getToken()))
-                .andExpect(status().isOk()).andReturn();
-
-        String responseJson = result.getResponse().getContentAsString();
-
-        assertNotNull(responseJson);
-    }
-
-    @Test
-    public void testSaveNoSuccess() throws Exception {
-
-        uri = new URI("/api/v1/fresh-products/adress/save");
-
-        assertNotNull(uri);
-
-        String requestJson =  "{\"idBuyer\": 10000000000, \"cep\": 56310753, \"referencia\": \"Atras da beira rio, n 160\", \"fone1\": \"87988264086\", \"fone2\": \"87988264040\"}";
-
-        MvcResult result = mockMvc.perform(
-                        MockMvcRequestBuilders.post(uri)
-                                .content(requestJson)
-                                .header("Content-Type", "application/json")
-                                .header("Authorization", tokenDTO.getTipo() + " " + tokenDTO.getToken()))
-                .andExpect(status().isNotFound()).andReturn();
-
-        String responseJson = result.getResponse().getContentAsString();
-
-        assertNotNull(responseJson);
-    }
-
-    @Test
-    public void testSaveWithSuccess() throws Exception {
-
-        uri = new URI("/api/v1/fresh-products/adress/save");
-
-        assertNotNull(uri);
-
-        String requestJson =  "{ \"idBuyer\": 1, \"cep\": 56310753, \"referencia\": \"Atras da beira rio, n 160\", \"fone1\": \"87988264086\", \"fone2\": \"87988264040\"}";
+        String requestJson =  "{ \"id_status\":7, \"id_shipping\":1}";
 
         MvcResult result = mockMvc.perform(
                         MockMvcRequestBuilders.post(uri)

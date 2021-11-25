@@ -22,20 +22,10 @@ public class ShippingHistoryController implements SecurityController {
 	@Autowired
 	private ShippingHistoryService shippingHistoryService;
 
-
-/*	@PostMapping(value = "/save/{id_status}/{id_shipping}")
-	public ResponseEntity<ShippingHistory> litShipping(@Valid @PathVariable Long id_status, @PathVariable Long id_status) throws Exception {
-		try {
-			ShippingHistory shippingHistory = shippingHistoryService.save1(id_status,id_status);
-			return new ResponseEntity<>(shippingHistory, HttpStatus.CREATED);
-		} catch (Exception e) {
-			return new ResponseEntity(e.getMessage(), HttpStatus.NOT_FOUND);
-		}
-	}*/
-
 	@PostMapping(value ="/save")
+
 	public ResponseEntity<ShippingHistory> saveInboundOrder(@Valid @RequestBody ShippingHistoryDTO dto) throws Exception {
-		ShippingHistory shippingHistory = shippingHistoryService.save(dto);
+		ShippingHistory shippingHistory = shippingHistoryService.salvar(dto);
 		return new ResponseEntity<>(shippingHistory, HttpStatus.CREATED);
 	}
 }

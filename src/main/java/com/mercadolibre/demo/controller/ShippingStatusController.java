@@ -2,6 +2,7 @@ package com.mercadolibre.demo.controller;
 
 import com.mercadolibre.demo.config.SecurityController;
 import com.mercadolibre.demo.dto.ShippingSDTO;
+import com.mercadolibre.demo.model.Seller;
 import com.mercadolibre.demo.model.ShippingS;
 import com.mercadolibre.demo.service.ShippingSService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,9 +22,14 @@ public class ShippingStatusController implements SecurityController {
 	private ShippingSService shippingSService;
 
 	@PostMapping(value = "/save")
-	public ResponseEntity<ShippingS> saveStatus(@Valid @RequestBody ShippingSDTO dto) throws Exception {
-		ShippingS shippingS = shippingSService.salvar(dto);
-		return new ResponseEntity<>(shippingS, HttpStatus.CREATED);
+	public ResponseEntity<ShippingS> saveStatus(@Valid @RequestBody ShippingSDTO dto){
+		try {
+			ShippingS shippingS = shippingSService.salvar(dto);
+			return new ResponseEntity<>(shippingS, HttpStatus.CREATED);
+		}
+		catch(Exception e) {
+			return new ResponseEntity(e.getMessage(), HttpStatus.NOT_FOUND);
+		}
 	}
 
 	@GetMapping(value = "/list")
@@ -40,8 +46,15 @@ public class ShippingStatusController implements SecurityController {
 	}
 
 	@DeleteMapping(value = "/delete/{id}")
-	public ResponseEntity<String> deleteStatus(@PathVariable Long id) throws Exception {
-		shippingSService.delete(id);
-		return new ResponseEntity<>("Status deletado com successfully", HttpStatus.OK);
+	public ResponseEntity<String> deleteStatus(@PathVariable Long id) {
+		try {
+			shippingSService.delete(id);
+			return new ResponseEntity<>("Status deletado com successfully", HttpStatus.OK);
+		}
+		catch(Exception e) {
+			return new ResponseEntity(e.getMessage(), HttpStatus.NOT_FOUND);
+		}
+
+
 	}
 }
