@@ -83,9 +83,6 @@ Com o token em mãos, você pode criar o seu usuário, seguindo o modelo abaixo:
 
 **Requisoito 6**
 
-Importante:
-No sistema **Mel Frios 1.0**, é possível controlar o meu estoque saber os produtos que estão para vencer, cadastrar novos produtos etc… porem não  e possivel enviar o pedido na casa do meu cliente, e gostaria de ter este novo recurso no meu sistema.
-
 Como melhoria para este requisito, foi possivel criar um sistema de Shipping onde e possivel enviar. um produto para o cliente e o mesmo pode rastrear o andamento do seu roduto por meio do um codigo de rastreio ate a casa do cliente.
 
 Para resover o problema proposto neste senario foi possivel elaborar uma atualizacao esta esta descrita no arquivo abaixo;

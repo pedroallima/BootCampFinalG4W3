@@ -1,0 +1,433 @@
+{
+	"info": {
+		"_postman_id": "30677800-409f-4c75-89dd-416f4eeaccea",
+		"name": "New Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Requisito6",
+			"item": [
+				{
+					"name": "Requisito6",
+					"item": [
+						{
+							"name": "adressList",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJOb3NzYSBBUFAiLCJzdWIiOiJ0aGlhZ28iLCJpYXQiOjE2Mzc1OTQ4MDQsImV4cCI6MTYzNzY4MTIwNH0.CC9EdnYYUypKRHRDhP7O7zFSMUta7LaKXB60r6Ll6-A",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Manga \",\r\n    \"description\": \"Manga com Vermelho e sabor ligeiramente adocicado\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/v1/fresh-products/adress/buscar/56310753",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"fresh-products",
+										"adress",
+										"buscar",
+										"56310753"
+									]
+								},
+								"description": "Informando o nome do produto seguindo de suas descrição faça o cadastro no sistema seguindo o modelo de requisição"
+							},
+							"response": []
+						},
+						{
+							"name": "ml-shipping-04 - Save_endereco OK",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJOb3NzYSBBUFAiLCJzdWIiOiJmaWxpcGUiLCJpYXQiOjE2Mzc3MjU1OTgsImV4cCI6MTYzNzgxMTk5OH0._pZX0do-gcoHXf0WRLVHv774uZtkEKyowmKywqGG_qY",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"idBuyer\": 2,\r\n    \"cep\": 56310753,\r\n    \"referencia\": \"Atras da beira rio, n 160\",\r\n    \"fone1\": \"87988264086\",\r\n    \"fone2\": \"87988264040\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/v1/fresh-products/adress/save/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"fresh-products",
+										"adress",
+										"save",
+										""
+									]
+								},
+								"description": "Informando o nome do produto seguindo de suas descrição faça o cadastro no sistema seguindo o modelo de requisição"
+							},
+							"response": []
+						}
+					],
+					"description": "Autenticação se faz necessária para utilizar os endpoints."
+				},
+				{
+					"name": "shippin_history",
+					"item": [
+						{
+							"name": "ml-shipping-02  - cadatar historico ok",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJOb3NzYSBBUFAiLCJzdWIiOiJmaWxpcGUiLCJpYXQiOjE2Mzc3MjIxMzgsImV4cCI6MTYzNzgwODUzOH0.RcuQJmMVNxJQrC9iqeAH-9mUdHkE07ZjHafPmT7TdeA",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n        \"id_status\":1,\r\n        \"id_shipping\":8\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/v1/fresh-products/shippingHistory/save",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"fresh-products",
+										"shippingHistory",
+										"save"
+									]
+								},
+								"description": "Para cadastrar um vendedor use o seu nome e sobrenome em requisição no corpo"
+							},
+							"response": []
+						}
+					],
+					"description": "Autenticação se faz necessária para utilizar os endpoints."
+				},
+				{
+					"name": "shippin_status - ok",
+					"item": [
+						{
+							"name": "SaveShippingStatus",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJOb3NzYSBBUFAiLCJzdWIiOiJmaWxpcGUiLCJpYXQiOjE2Mzc3MjIxMzgsImV4cCI6MTYzNzgwODUzOH0.RcuQJmMVNxJQrC9iqeAH-9mUdHkE07ZjHafPmT7TdeA",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"Pedido comprado\",\r\n    \"order\":1,\r\n    \"status\":\"ATIVO\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/v1/fresh-products/shipping/status/save",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"fresh-products",
+										"shipping",
+										"status",
+										"save"
+									]
+								},
+								"description": "Para cadastrar um vendedor use o seu nome e sobrenome em requisição no corpo"
+							},
+							"response": []
+						},
+						{
+							"name": "listShippingStatus",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJOb3NzYSBBUFAiLCJzdWIiOiJ0aGlhZ28iLCJpYXQiOjE2MzczMzIxNzAsImV4cCI6MTYzNzQxODU3MH0.My6MQiyG2z4sL1vLeR_vDv79OzXa2G7RjMKOLmpMA5k",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8080/api/v1/fresh-products/seller/list",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"fresh-products",
+										"seller",
+										"list"
+									]
+								},
+								"description": "Chame a lista de Vendedores por requisição na barra de navegação"
+							},
+							"response": []
+						},
+						{
+							"name": "updateShippingStatus",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJOb3NzYSBBUFAiLCJzdWIiOiJ0aGlhZ28iLCJpYXQiOjE2MzczMzIxNzAsImV4cCI6MTYzNzQxODU3MH0.My6MQiyG2z4sL1vLeR_vDv79OzXa2G7RjMKOLmpMA5k",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\":\"Seu produto esta com defeito!\",\n    \"order\":8,\n    \"status\":\"INATIVO\"\n}"
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/v1/fresh-products/shipping/status/update/8",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"fresh-products",
+										"shipping",
+										"status",
+										"update",
+										"8"
+									]
+								},
+								"description": "Para atualizar um vendedor, basta enviar o ID na barra de requisição e as informações atualizadas no corpo"
+							},
+							"response": []
+						},
+						{
+							"name": "deleteShippingStatus",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJOb3NzYSBBUFAiLCJzdWIiOiJ0aGlhZ28iLCJpYXQiOjE2MzczMzIxNzAsImV4cCI6MTYzNzQxODU3MH0.My6MQiyG2z4sL1vLeR_vDv79OzXa2G7RjMKOLmpMA5k",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8080/api/v1/fresh-products/seller/delete/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"fresh-products",
+										"seller",
+										"delete",
+										""
+									]
+								},
+								"description": "Para deletar um Vendedor basta informar seu ID em requisição na barra de navegação"
+							},
+							"response": []
+						}
+					],
+					"description": "Autenticação se faz necessária para utilizar os endpoints."
+				},
+				{
+					"name": "shipping",
+					"item": [
+						{
+							"name": "ml-shipping-03 - SaveShippingStatus OK",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJOb3NzYSBBUFAiLCJzdWIiOiJmaWxpcGUiLCJpYXQiOjE2Mzc3NzcxMjYsImV4cCI6MTYzNzg2MzUyNn0.edf5F0IvCbfnoG3YsAig4fW5BOrOLLtVm7dgQ018T9o",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/v1/fresh-products/shippingcode/save/6/false",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"fresh-products",
+										"shippingcode",
+										"save",
+										"6",
+										"false"
+									]
+								},
+								"description": "Para cadastrar um vendedor use o seu nome e sobrenome em requisição no corpo"
+							},
+							"response": []
+						},
+						{
+							"name": "ml-shipping-01- buscar codigo",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJOb3NzYSBBUFAiLCJzdWIiOiJmaWxpcGUiLCJpYXQiOjE2Mzc3MjU1OTgsImV4cCI6MTYzNzgxMTk5OH0._pZX0do-gcoHXf0WRLVHv774uZtkEKyowmKywqGG_qY",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/v1/fresh-products/shippingcode/list/ML3253220BR",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"fresh-products",
+										"shippingcode",
+										"list",
+										"ML3253220BR"
+									]
+								},
+								"description": "Para cadastrar um vendedor use o seu nome e sobrenome em requisição no corpo"
+							},
+							"response": []
+						}
+					],
+					"description": "Autenticação se faz necessária para utilizar os endpoints."
+				}
+			],
+			"description": "Autenticação se faz necessária para utilizar os endpoints."
+		}
+	]
+}
