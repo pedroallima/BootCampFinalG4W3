@@ -306,3 +306,4 @@ http://localhost:8080/api/v1/fresh-products/shipping/status/delete/8
 - [x] 5. Cobertura de teste superior a 80% (cobertura de teste> 80%)
 - [x] 6. Documentação por meio do Swagger.
 
+Arquivos: https://github.com/pedroallima/BootCampFinalG4W3/tree/master/database/requisito6
