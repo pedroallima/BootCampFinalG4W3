@@ -4,7 +4,7 @@
 
 ### Equipe 4 W-3
 
-Requesito 5.1 bootcampw3
+Requesito 6 bootcampw3
 
 
 
@@ -78,6 +78,32 @@ Com o token em mãos, você pode criar o seu usuário, seguindo o modelo abaixo:
 * Pegue o token gerado e libere no botão "**Authorize**" ***no lado direito superior da página***, inserindo o token para uso da documentação Swagger.
 
 ​		- após liberação no sistema, você poderá usar a documentação por completo.
+
+
+
+**Requisoito 6**
+
+Como melhoria para este requisito, foi possivel criar um sistema de Shipping onde e possivel enviar. um produto para o cliente e o mesmo pode rastrear o andamento do seu roduto por meio do um codigo de rastreio ate a casa do cliente.
+
+Obs: Neste projeto e possivel utilizar o Postman ou o Swegger para poder testar os recursos de Back-end.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
