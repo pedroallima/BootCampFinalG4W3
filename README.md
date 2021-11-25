@@ -164,8 +164,6 @@ Neste local e possivel Criar um codigo de rastreamento para que o comprado possa
 http://localhost:8080/api/v1/fresh-products/shippingcode/save/{CODE_PURCHASEORDER}/{BOLEAN}
 ```
 
-
-
 ***Link para Swegger:***
 
 http://localhost:8080/swagger-ui/index.html?configUrl=/v3/api-docs/swagger-config#/shipping-history-controller/saveInboundOrder
@@ -173,3 +171,67 @@ http://localhost:8080/swagger-ui/index.html?configUrl=/v3/api-docs/swagger-confi
 ***Link para POstman:***
 
 http://localhost:8080/api/v1/fresh-products/shippingHistory/save
+
+---
+---
+---
+
+
+#### GET - ml-shipping-04
+
+Neste local e possivel Criar um codigo de rastreamento para que o comprado possa aconpanhar o seu pedido, desde a saida da WhareHouse ate a endereco de destino.
+
+
+```
+http://localhost:8080/api/v1/fresh-products/shippingcode/save/{CODE_PURCHASEORDER}/{BOLEAN}
+```
+
+***Link para Swegger:***
+
+http://localhost:8080/swagger-ui/index.html?configUrl=/v3/api-docs/swagger-config#/shipping-controller/saveShipping
+
+***Link para POstman:***
+
+http://localhost:8080/api/v1/fresh-products/shippingcode/save
+
+---
+---
+---
+---
+
+
+
+### // Projeto em grupo
+
+A clínica veterinária “Zoo World” quer implementar um sistema desenvolvido em Java para a administração de cada um de
+seus pacientes. Os veterinários têm dois tipos de especialidades: Animais Domésticos e Animais de Fazenda, com base no
+fato de que atendem cães, gatos, porquinhos-da-índia, coelhos, tartarugas, cavalos, vacas e ovelhas.
+
+<br/><br/>
+
+● De cada um de seus pacientes, eles precisam obter os seguintes dados:<br/>
+
+- [x] espécie,<br/>
+- [x] raça,<br/>
+- [x] cor/s,<br/>
+- [x] data de nascimento e<br/>
+- [x] nome.<br/>
+
+
+## Nível 1: Base
+- [x] 1. Readme.txt descritivo.
+- [x] 2. Documentação em PDF com formato de User Story fornecido pela cadeira
+(Template)
+- [x] 3. User Story com até 4 endpoints.
+- [x] 4. Coleção de casos de teste do Postman para cada endpoint.
+- [x] 5. Cobertura de teste entre 50% e 80%.
+
+## Nível 2: Bônus
+
+- [x] 1. Todos os resultados do Nível 1 concluídos.
+- [x] 2. Diagrama de classes completo (UML) do projeto final.
+- [x] 3. Diagrama de Entidade-Relacionamento (DER) completo do Projeto Final.
+- [x] 4. User Story com mais de 4 endpoints (requisito 6).
+- [x] 5. Cobertura de teste superior a 80% (cobertura de teste> 80%)
+- [x] 6. Documentação por meio do Swagger.
+
